@@ -1,36 +1,8 @@
-FROM lsiobase/alpine.arm64
+FROM lsiobase/alpine.arm64:3.6
 MAINTAINER sparklyballs
 
-# install runtime packages
-RUN \
- apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/main \
-	gd \
-	libxslt && \
- apk add --no-cache \
-	curl \
-	freetype \
-	git \
-	lcms2 \
-	libjpeg-turbo \
-	libwebp \
-	openjpeg \
-	openssl \
-	p7zip \
-	py-lxml \
-	py2-pip \
-	python2 \
-	tar \
-	tiff \
-	unrar \
-	unzip \
-	wget \
-	xz \
-	zlib && \
-
- apk add --no-cache --repository http://nl.alpinelinux.org/alpine/edge/community \
-	vnstat && \
-
 # install build packages
+RUN \
  apk add --no-cache --virtual=build-dependencies \
 	autoconf \
 	automake \
@@ -50,10 +22,32 @@ RUN \
 	tiff-dev \
 	zlib-dev && \
 
+# install runtime packages
+ apk add --no-cache \
+	curl \
+	freetype \
+	git \
+	lcms2 \
+	libjpeg-turbo \
+	libwebp \
+	openjpeg \
+	openssl \
+	p7zip \
+	py2-lxml \
+	py2-pip \
+	python2 \
+	tar \
+	tiff \
+	unrar \
+	unzip \
+	vnstat \
+	wget \
+	xz \
+	zlib && \
+
 # add pip packages
  pip install --no-cache-dir -U \
 	pip && \
- LIBRARY_PATH=/lib:/usr/lib \
  pip install --no-cache-dir -U \
 	cheetah \
 	configparser \
