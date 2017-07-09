@@ -7,7 +7,7 @@
 
 [Dockerfile](https://github.com/linuxserver/docker-baseimage-python-arm64/blob/master/Dockerfile)
 
-[![](https://images.microbadger.com/badges/image/lsiobase/alpine.python.arm64.svg)](https://microbadger.com/images/lsiobase/alpine.python.arm64 "Get your own image badge on microbadger.com")[![Build Status](http://jenkins.linuxserver.io:8080/job/Dockers/job/BaseImages-arm64/job/lsiobase-alpine.python.arm64-3.6/badge/icon)](http://jenkins.linuxserver.io:8080/job/Dockers/job/BaseImages-arm64/job/lsiobase-alpine.python.arm64-3.6/)
+[![](https://images.microbadger.com/badges/image/lsiobase/alpine.python.arm64.svg)](https://microbadger.com/images/lsiobase/alpine.python.arm64 "Get your own image badge on microbadger.com")
 
 ### This base container is not aimed at public consumption. It exists to serve as a single endpoint for LinuxServer.io arm64 containers and is based upon [Alpine Linux](https://hub.docker.com/_/alpine/) and [S6 overlay](https://github.com/just-containers/s6-overlay).
 
