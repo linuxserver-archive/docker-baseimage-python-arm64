@@ -1,8 +1,7 @@
-FROM lsiobase/alpine.arm64:3.6
-MAINTAINER sparklyballs
+FROM lsiobase/alpine.arm64:3.7
 
-# install build packages
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	autoconf \
 	automake \
@@ -21,8 +20,7 @@ RUN \
 	python2-dev \
 	tiff-dev \
 	zlib-dev && \
-
-# install runtime packages
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	curl \
 	freetype \
@@ -44,8 +42,7 @@ RUN \
 	wget \
 	xz \
 	zlib && \
-
-# add pip packages
+ echo "**** install pip packages ****" && \
  pip install --no-cache-dir -U \
 	pip && \
  pip install --no-cache-dir -U \
@@ -61,8 +58,7 @@ RUN \
 	setuptools \
 	urllib3 \
 	virtualenv && \
-
-# clean up
+ echo "**** clean up ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
